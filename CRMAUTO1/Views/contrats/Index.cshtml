@@ -1,0 +1,65 @@
+﻿@model IEnumerable<CRMAUTO.Models.contrat>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idvoiture)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.clientcin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.datecontrat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kmdepart)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idvoiture)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clientcin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.datecontrat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kmdepart)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.idcontrat }) |
+                @Html.ActionLink("Details", "Details", new { id=item.idcontrat }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.idcontrat })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

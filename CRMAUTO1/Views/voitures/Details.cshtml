@@ -1,0 +1,58 @@
+﻿@model CRMAUTO.Models.voiture
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>voiture</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.kilometrage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kilometrage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.annee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.annee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.carburant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.carburant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.puissance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.puissance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.datecontrat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.datecontrat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.matricule }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
