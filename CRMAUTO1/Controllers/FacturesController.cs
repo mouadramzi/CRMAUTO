@@ -69,7 +69,7 @@ namespace CRMAUTO1.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idfacture,cin,Montant,modele,categorie")] Facture facture)
+        public ActionResult Create([Bind(Include = "idfacture,cin,Montant,modele,categorie,Contrats.idcontrat")] Facture facture)
         {
             if (ModelState.IsValid)
             {

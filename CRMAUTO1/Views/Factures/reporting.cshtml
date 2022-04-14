@@ -60,9 +60,10 @@
                 @Html.DisplayNameFor(model => model.categorie)
             </th>
             <th>
-                Facture id 
+                Facture id
             </th>
             <th>Date de Facture </th>
+            <th>Contrat  </th>
         </tr>
 
         @foreach (var item in Model)
@@ -87,6 +88,10 @@
 
             <td>
                 @DateTime.Now.ToShortDateString()
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contrats.idcontrat)
+
             </td>
         </tr>
         }
