@@ -1,53 +1,45 @@
 ﻿@model IEnumerable<CRMAUTO.Models.Modelevoiture>
 
 @{
-    Layout = null;
+    ViewBag.Title = "Index";
 }
 
-<!DOCTYPE html>
+<h2>Index</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nom_modele)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nom_categorie)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.puissance)
-            </th>
-            <th></th>
-        </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nom_modele)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nom_categorie)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.puissance)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.idmodele }) |
-                @Html.ActionLink("Details", "Details", new { id=item.idmodele }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.idmodele })
-            </td>
-        </tr>
-    }
-    
-    </table>
-</body>
-</html>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom_modele)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom_categorie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.puissance)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nom_modele)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nom_categorie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.puissance)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idmodele }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idmodele }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idmodele })
+        </td>
+    </tr>
+}
+
+</table>

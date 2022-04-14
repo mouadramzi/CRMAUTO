@@ -53,6 +53,7 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
@@ -125,41 +126,67 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\StyleSheet1.css" />
+    <Content Include="Content\img\black-auto-logo-vector-art-illustration-badge-92810228.jpg" />
+    <Content Include="Content\img\im1.png" />
     <Content Include="Global.asax" />
+    <Content Include="Models\test1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>test1.Context.cs</LastGenOutput>
+      <DependentUpon>test1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\test1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>test1.edmx</DependentUpon>
+      <LastGenOutput>test1.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
+    <Content Include="Views\voiturre.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\voitures\Create.cshtml" />
     <Content Include="Views\voitures\Delete.cshtml" />
     <Content Include="Views\voitures\Details.cshtml" />
     <Content Include="Views\voitures\Edit.cshtml" />
     <Content Include="Views\voitures\Index.cshtml" />
-    <Content Include="Views\voiturre.cshtml" />
-    <Content Include="Views\clients\Create.cshtml" />
-    <Content Include="Views\clients\Delete.cshtml" />
-    <Content Include="Views\clients\Details.cshtml" />
-    <Content Include="Views\clients\Edit.cshtml" />
-    <Content Include="Views\clients\Index.cshtml" />
-    <Content Include="Views\contrats\Create.cshtml" />
-    <Content Include="Views\contrats\Delete.cshtml" />
-    <Content Include="Views\contrats\Details.cshtml" />
-    <Content Include="Views\contrats\Edit.cshtml" />
-    <Content Include="Views\contrats\Index.cshtml" />
-    <Content Include="Views\Factures\Create.cshtml" />
-    <Content Include="Views\Factures\Delete.cshtml" />
-    <Content Include="Views\Factures\Details.cshtml" />
-    <Content Include="Views\Factures\Edit.cshtml" />
-    <Content Include="Views\Factures\Index.cshtml" />
-    <Content Include="Views\Categories\Create.cshtml" />
-    <Content Include="Views\Categories\Delete.cshtml" />
-    <Content Include="Views\Categories\Details.cshtml" />
-    <Content Include="Views\Categories\Edit.cshtml" />
-    <Content Include="Views\Categories\Index.cshtml" />
     <Content Include="Views\Modelevoitures\Create.cshtml" />
     <Content Include="Views\Modelevoitures\Delete.cshtml" />
     <Content Include="Views\Modelevoitures\Details.cshtml" />
     <Content Include="Views\Modelevoitures\Edit.cshtml" />
     <Content Include="Views\Modelevoitures\Index.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\clients\Create.cshtml" />
+    <Content Include="Views\clients\Delete.cshtml" />
+    <Content Include="Views\clients\Details.cshtml" />
+    <Content Include="Views\clients\Edit.cshtml" />
+    <Content Include="Views\clients\Index.cshtml" />
+    <Content Include="Views\clients\searchcleint.cshtml" />
+    <Content Include="Views\Factures\Create.cshtml" />
+    <Content Include="Views\Factures\Delete.cshtml" />
+    <Content Include="Views\Factures\Details.cshtml" />
+    <Content Include="Views\Factures\Edit.cshtml" />
+    <Content Include="Views\Factures\Index.cshtml" />
+    <Content Include="Views\contrats\Create.cshtml" />
+    <Content Include="Views\contrats\Delete.cshtml" />
+    <Content Include="Views\contrats\Details.cshtml" />
+    <Content Include="Views\contrats\Edit.cshtml" />
+    <Content Include="Views\contrats\Index.cshtml" />
+    <Content Include="Views\contrats\Searchcontrat.cshtml" />
+    <Content Include="Views\voitures\Searchvoiture.cshtml" />
+    <Content Include="Views\voitures\search.cshtml" />
+    <EntityDeploy Include="Models\test1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>test1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\test1.edmx.diagram">
+      <DependentUpon>test1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\Factures\searchfacture.cshtml" />
+    <Content Include="Views\Factures\reporting.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -181,8 +208,26 @@
     <Compile Include="Models\Crmcontext.cs" />
     <Compile Include="Models\Crminitializer.cs" />
     <Compile Include="Models\Facture.cs" />
+    <Compile Include="Models\Factures.cs">
+      <DependentUpon>test1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Modelevoiture.cs" />
     <Compile Include="Models\Register.cs" />
+    <Compile Include="Models\test1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\test1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\test1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\voiture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Global.asax.cs">
@@ -316,6 +361,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

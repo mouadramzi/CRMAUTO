@@ -4,37 +4,67 @@
         @* BEGIN Search *@
         <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search...">
+                <input type="text" name="a" class="form-control" placeholder="Search...">
                 <span class="input-group-btn">
-                    <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                        <i class="fa fa-search"></i>
-                    </button>
+                  
+                    <button type="submit" id="button1" name="button1" formaction='@Url.Action("search", "voitures")'>  <i class="fa fa-search"></i></button>
+                      
+                    
                 </span>
-            </div>
+            </div>  
         </form>
         @* END Search *@
         @* BEGIN Menu *@
+        @if (User.Identity.IsAuthenticated)
+        {
         <ul class="sidebar-menu" data-widget="tree">
-            <li class="header">HEADER</li>
+            <li class="header">INFOCAR</li>
             <li class="@Url.IsLinkActive("Index", "Home")">
-                <a href="@Url.Action("Index", "Home")"><i class="fa fa-link"></i> <span>Home</span></a>
+                <a href="@Url.Action("Index", "clients")"><i class="fa fa-link"></i> <span>Client</span></a>
             </li>
-            <li class="@Url.IsLinkActive("AnotherLink", "Home")">
-                <a href="@Url.Action("AnotherLink", "Home")"><i class="fa fa-link"></i> <span>Another Link</span></a>
+            <li class="@Url.IsLinkActive("index", "contrats")">
+                <a href="@Url.Action("index", "contrats")"><i class="fa fa-link"></i> <span>Contrat </span></a>
             </li>
+            <li class="@Url.IsLinkActive("index", "Factures")">
+                <a href="@Url.Action("index", "Factures")"><i class="fa fa-link"></i> <span>Facture </span></a>
+            </li>
+
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-link"></i> <span>Multilevel</span>
+                    <i class="fa fa-link"></i> <span>Voiture</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#">Link in level 2</a></li>
-                    <li><a href="#">Link in level 2</a></li>
+                    <li> <a href="@Url.Action("index", "voitures")">Ajouter une  voiture </a></li>
+                    <li> <a href="@Url.Action("index", "modelevoitures")">Modele de voiture </a></li>
+                    <li> <a href="@Url.Action("index", "categories")">Categorie de voiture </a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-link"></i> <span>Recherche</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li> <a href="@Url.Action("searchvoiture", "voitures")">Recherche d'une  voiture </a></li>
+                    <li> <a href="@Url.Action("searchcleint", "clients")">Recherche d'un client </a></li>
+                    <li> <a href="@Url.Action("searchfacture", "factures")">Recherche d'une facture </a></li>
+                    <li> <a href="@Url.Action("searchcontrat", "contrats" )">Recherche d'une contrat </a></li>
+
                 </ul>
             </li>
         </ul>
+        }
+        else
+        {
+            <ul class="sidebar-menu" data-widget="tree"> </ul>
+        }
+
         @* END Menu *@
     </section>
 </aside>

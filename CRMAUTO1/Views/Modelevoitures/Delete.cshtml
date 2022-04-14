@@ -1,56 +1,48 @@
 ﻿@model CRMAUTO.Models.Modelevoiture
 
 @{
-    Layout = null;
+    ViewBag.Title = "Delete";
 }
 
-<!DOCTYPE html>
+<h2>Delete</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Delete</title>
-</head>
-<body>
-    <h3>Are you sure you want to delete this?</h3>
-    <div>
-        <h4>Modelevoiture</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Nom_modele)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Nom_modele)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Nom_categorie)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Nom_categorie)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.puissance)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.puissance)
-            </dd>
-    
-        </dl>
-    
-        @using (Html.BeginForm()) {
-            @Html.AntiForgeryToken()
-    
-            <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
-            </div>
-        }
-    </div>
-</body>
-</html>
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Modelevoiture</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom_modele)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom_modele)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom_categorie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom_categorie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.puissance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.puissance)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

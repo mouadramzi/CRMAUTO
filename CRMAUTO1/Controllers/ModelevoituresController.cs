@@ -14,13 +14,13 @@ namespace CRMAUTO1.Controllers
     {
         private Crmcontext db = new Crmcontext();
 
-        // GET: Modelevoitures
+        // GET: Modelevoitures1
         public ActionResult Index()
         {
             return View(db.modelevoitures.ToList());
         }
 
-        // GET: Modelevoitures/Details/5
+        // GET: Modelevoitures1/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,13 +35,13 @@ namespace CRMAUTO1.Controllers
             return View(modelevoiture);
         }
 
-        // GET: Modelevoitures/Create
+        // GET: Modelevoitures1/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Modelevoitures/Create
+        // POST: Modelevoitures1/Create
         // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -58,7 +58,7 @@ namespace CRMAUTO1.Controllers
             return View(modelevoiture);
         }
 
-        // GET: Modelevoitures/Edit/5
+        // GET: Modelevoitures1/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,7 +73,7 @@ namespace CRMAUTO1.Controllers
             return View(modelevoiture);
         }
 
-        // POST: Modelevoitures/Edit/5
+        // POST: Modelevoitures1/Edit/5
         // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -89,7 +89,7 @@ namespace CRMAUTO1.Controllers
             return View(modelevoiture);
         }
 
-        // GET: Modelevoitures/Delete/5
+        // GET: Modelevoitures1/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace CRMAUTO1.Controllers
             return View(modelevoiture);
         }
 
-        // POST: Modelevoitures/Delete/5
+        // POST: Modelevoitures1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

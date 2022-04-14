@@ -13,6 +13,18 @@ namespace CRMAUTO.Models
         [Key]
         public string matricule { get; set; }
         [Required]
+        [Display(Name = "Nom de voiture ")]
+        public string nomvoiture { get; set; }
+
+        [Required]
+        [Display(Name = "Nom de modele ")]
+        public string nomdemodele { get; set; }
+
+        [Required]
+        [Display(Name = "Nom de categorie ")]
+        public string nomcategorie { get; set; }
+
+        [Required]
         [Display(Name = "Kilometrage")]
         public string kilometrage { get; set; }
         [Required]
@@ -27,9 +39,9 @@ namespace CRMAUTO.Models
         [Required]
         [Display(Name = "Numero ")]
         public string datecontrat { get; set; }
-        public virtual ICollection<contrat> Contrats { get; set; }
-
-
+       
+        public virtual ICollection<Modelevoiture> Modelevoitures { get; set; }
+        public virtual ICollection<Categorie> Categories { get; set; }
 
 
 

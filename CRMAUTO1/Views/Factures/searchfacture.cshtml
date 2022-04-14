@@ -1,14 +1,22 @@
 ﻿@model IEnumerable<CRMAUTO.Models.Facture>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Votre facture";
 }
 
-<h2>Index</h2>
+ 
+<form action="#" method="get" class="">
+    <div class="input-">
+        CIN :    <input type="text" name="idclient" class="" placeholder="CIN..."> Id facture : <input type="text" name="idf" class="" placeholder="Idf..."> 
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
+        <span class="">
+            <button type="submit" id="button2" value="Rechercher" formaction='@Url.Action("searchfacture", "factures")'>Rechercher</button>
+
+
+        </span>
+    </div>
+</form>
 <table class="table">
     <tr>
         <th>
@@ -22,6 +30,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.categorie)
+        </th>
+        <th>
+            Date de factures
         </th>
         <th></th>
     </tr>
@@ -41,9 +52,11 @@
             @Html.DisplayFor(modelItem => item.categorie)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idfacture }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idfacture }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idfacture })
+            @DateTime.Now.ToShortDateString()
+        </td>
+        <td>
+            @Html.ActionLink("Imprimer", "reporting", new { id = item.idfacture }) |
+            @Html.ActionLink("Details", "Details", new { id = item.idfacture }) 
         </td>
     </tr>
 }

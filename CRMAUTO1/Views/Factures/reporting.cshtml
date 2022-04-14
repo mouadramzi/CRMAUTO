@@ -1,0 +1,96 @@
+﻿@model IEnumerable<CRMAUTO.Models.Facture>
+
+ 
+
+
+<style>
+    .styled-table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 600px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        text-align: center;
+    }
+
+        .styled-table th tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+        }
+
+        .styled-table tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+            .styled-table tr:nth-of-type(even) {
+                background-color: #f3f3f3;
+            }
+
+            .styled-table tr:last-of-type {
+                border-bottom: 2px solid #009879;
+            }
+
+    .lab {
+        margin-left: 900px;
+    }
+</style>
+<center>
+    <div>
+        <h1> Facture de  @User.Identity.Name        </h1>
+    </div>
+    <table class="styled-table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.cin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Montant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modele)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.categorie)
+            </th>
+            <th>
+                Facture id 
+            </th>
+            <th>Date de Facture </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Montant)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.modele)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.categorie)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.idfacture)
+            </td>
+
+            <td>
+                @DateTime.Now.ToShortDateString()
+            </td>
+        </tr>
+        }
+
+    </table>
+    <button ID="printButton" Text="Print" onclick="javascript:window.print();"> PRINT</button>                 
+    </center>

@@ -34,7 +34,19 @@ namespace CRMAUTO1.Controllers
             }
             return View(contrat);
         }
+        public ActionResult Searchcontrat(string ctt  , string cin)
+        {
+             
+                var searchcontrat = from d in db.contrats
+                             where d.idcontrat==ctt  
+                             ||d.clientcin == cin
+                             select d;
 
+                return View("Searchcontrat", searchcontrat.ToList());
+       
+       
+
+        }
         // GET: contrats/Create
         public ActionResult Create()
         {
@@ -46,7 +58,7 @@ namespace CRMAUTO1.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idcontrat,idvoiture,clientcin,cin,datecontrat,kmdepart")] contrat contrat)
+        public ActionResult Create([Bind(Include = "idcontrat,idvoiture,clientcin,datecontrat,kmdepart")] contrat contrat)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +90,7 @@ namespace CRMAUTO1.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idcontrat,idvoiture,clientcin,cin,datecontrat,kmdepart")] contrat contrat)
+        public ActionResult Edit([Bind(Include = "idcontrat,idvoiture,clientcin,datecontrat,kmdepart")] contrat contrat)
         {
             if (ModelState.IsValid)
             {

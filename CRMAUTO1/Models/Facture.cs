@@ -15,10 +15,13 @@ namespace CRMAUTO.Models
         public string cin { get; set; }
         [Required]
         [Display(Name = "Montant")]
-        public string Montant { get; set; }
+        public int Montant { get; set; }
         [Required]
-        [Display(Name = "categorie")]
-        [DataType(DataType.Text)]
+        
+        
+        [Display(Name = " Nom de Modele")]
+        public string modele { get; set; }
+        [Display(Name = "Nom de categorie")]
         public string categorie { get; set; }
         public virtual contrat Contrats { get; set; }
 

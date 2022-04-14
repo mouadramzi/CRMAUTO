@@ -1,11 +1,37 @@
 ﻿@model IEnumerable<CRMAUTO.Models.voiture>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Voiture est : ";
 }
 
-<h2>Index</h2>
+<form action="#" method="get" class="">
+    <div class="input-">
+        Modele :    <input type="text" name="b" class="" placeholder="modele...">
+        Carburant :
+        <select class="" id="Cat" gorie" name="d">
+            <option value="">Selectionner type de carburant </option>
+            <option value="Essence">Essence </option>
+            <option value="Diesel">Diesel</option>
+            <option value="Hyberid">Hyberid</option>
+            <option value="Electrique">Electrique</option>
 
+        </select>
+        Categorie :
+        <select class="" id="Cat" gorie" name="a">
+            <option value="">Selectionner une Catégorie </option>
+            <option value="Cabriolet ">Cabriolet  </option>
+            <option value="Citadine">Citadine</option>
+            <option value="Economique">Economique</option>
+            <option value="SUV ">SUV </option>
+
+        </select>
+        <span class="">
+            <button type="submit" id="button2" value="Rechercher" formaction='@Url.Action("Searchvoiture", "voitures")'>Rechercher</button>
+
+
+        </span>
+    </div>
+</form>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -66,8 +92,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.matricule }) |
-            @Html.ActionLink("Details", "Details", new { id=item.matricule }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.matricule })
+            @Html.ActionLink("Details", "Details", new { id=item.matricule })  
         </td>
     </tr>
 }

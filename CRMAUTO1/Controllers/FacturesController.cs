@@ -13,6 +13,29 @@ namespace CRMAUTO1.Controllers
     public class FacturesController : Controller
     {
         private Crmcontext db = new Crmcontext();
+        public ActionResult searchfacture(string idclient, string idf)
+        {
+            var search = from d in db.factures
+                         where d.cin == idclient||d.idfacture==idf
+                      
+                         select d;
+
+            return View("searchfacture", search.ToList());
+
+        }
+        public ActionResult reporting(string id)
+        {
+
+
+
+            var searchf = from d in db.factures
+                         where   d.idfacture == id
+
+                         select d;
+
+            return View("reporting", searchf.ToList());
+
+        }
 
         // GET: Factures
         public ActionResult Index()
@@ -46,7 +69,7 @@ namespace CRMAUTO1.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idfacture,cin,Montant,categorie")] Facture facture)
+        public ActionResult Create([Bind(Include = "idfacture,cin,Montant,modele,categorie")] Facture facture)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +101,7 @@ namespace CRMAUTO1.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idfacture,cin,Montant,categorie")] Facture facture)
+        public ActionResult Edit([Bind(Include = "idfacture,cin,Montant,modele,categorie")] Facture facture)
         {
             if (ModelState.IsValid)
             {

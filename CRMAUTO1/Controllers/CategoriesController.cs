@@ -46,7 +46,7 @@ namespace CRMAUTO1.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CategorieId,Nom_categorie,voitureid,modele_voiture")] Categorie categorie)
+        public ActionResult Create([Bind(Include = "CategorieId,Nom_categorie,modele_voiture")] Categorie categorie)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace CRMAUTO1.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CategorieId,Nom_categorie,voitureid,modele_voiture")] Categorie categorie)
+        public ActionResult Edit([Bind(Include = "CategorieId,Nom_categorie,modele_voiture")] Categorie categorie)
         {
             if (ModelState.IsValid)
             {

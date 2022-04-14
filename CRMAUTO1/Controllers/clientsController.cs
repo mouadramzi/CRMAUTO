@@ -35,6 +35,19 @@ namespace CRMAUTO1.Controllers
             return View(client);
         }
 
+
+        public ActionResult searchcleint(string nom ,string cin , string ville )
+        {
+            var search = from d in db.clients
+                         where d.cin == nom
+                         || d.Name == nom
+                         || d.adresse==ville
+              select d;
+             
+            return View("searchcleint", search.ToList());
+
+        }
+
         // GET: clients/Create
         public ActionResult Create()
         {

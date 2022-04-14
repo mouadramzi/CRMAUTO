@@ -55,8 +55,9 @@ namespace CRMAUTO1.Controllers
         }
         public ActionResult LogOff()
         {
+            Session.Clear();
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("login", "Account");
         }
         public ActionResult Register()
         {

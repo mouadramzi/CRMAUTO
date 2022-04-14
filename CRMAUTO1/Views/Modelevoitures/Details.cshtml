@@ -1,50 +1,42 @@
 ﻿@model CRMAUTO.Models.Modelevoiture
 
 @{
-    Layout = null;
+    ViewBag.Title = "Details";
 }
 
-<!DOCTYPE html>
+<h2>Details</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
-    <div>
-        <h4>Modelevoiture</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Nom_modele)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Nom_modele)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Nom_categorie)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Nom_categorie)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.puissance)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.puissance)
-            </dd>
-    
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.idmodele }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-</body>
-</html>
+<div>
+    <h4>Modelevoiture</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom_modele)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom_modele)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom_categorie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom_categorie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.puissance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.puissance)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idmodele }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

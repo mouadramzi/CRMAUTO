@@ -15,13 +15,11 @@ namespace CRMAUTO.Models
         [Required]
         [Display(Name = "Nom de categorie :")]
         public string Nom_categorie { get; set; }
-        [Required]
-        [Display(Name = "voiture id :")]
-        public string voitureid { get; set; }
+       
         [Display(Name = "modele voiture  :")]
-        public int modele_voiture { get; set; }
+        public String modele_voiture { get; set; }
 
-        public virtual ICollection<voiture> Voitures { get; set; }
+     
         public virtual ICollection<Modelevoiture> Modelevoitures { get; set; }
 
     }

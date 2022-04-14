@@ -13,7 +13,47 @@ namespace CRMAUTO1.Controllers
     public class voituresController : Controller
     {
         private Crmcontext db = new Crmcontext();
+       
+        public ActionResult getmodele()
+        {
+            var getmodele1 = db.modelevoitures.ToList();
+            SelectList list = new SelectList(getmodele1, "idmodele", "nom_modele");
+            ViewBag.mouad = list;
+            return View();
+        }
+        public ActionResult Searchvoiture(string a , string b  , string d  )
+        {
 
+          Crmcontext crm = new Crmcontext();
+        var search = from an in crm.voitures
+                         where(
+                      an.nomcategorie == a
+                      && an.nomvoiture==b
+                      
+                     && an.carburant==d )
+                         select an;  
+            return View("Searchvoiture", search.ToList());
+
+        }
+        public ActionResult search(string a)
+        {
+                       
+             
+                var searchc = from an in db.voitures
+                             where (
+                           an.nomdemodele == a||an.nomcategorie==a||an.matricule==a)
+                             select an;
+                return View("search", searchc.ToList());
+           
+          
+          
+           
+        }
+        //public ActionResult search()
+        //{
+        //     return View("Search", db.voitures.ToList());
+
+        //}
         // GET: voitures
         public ActionResult Index()
         {
@@ -46,7 +86,7 @@ namespace CRMAUTO1.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "matricule,kilometrage,annee,carburant,puissance,datecontrat")] voiture voiture)
+        public ActionResult Create([Bind(Include = "matricule,nomvoiture,nomdemodele,nomcategorie,kilometrage,annee,carburant,puissance,datecontrat")] voiture voiture)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +118,7 @@ namespace CRMAUTO1.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "matricule,kilometrage,annee,carburant,puissance,datecontrat")] voiture voiture)
+        public ActionResult Edit([Bind(Include = "matricule,nomvoiture,nomdemodele,nomcategorie,kilometrage,annee,carburant,puissance,datecontrat")] voiture voiture)
         {
             if (ModelState.IsValid)
             {

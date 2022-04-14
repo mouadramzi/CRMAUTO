@@ -18,11 +18,15 @@ namespace CRMAUTO.Models
         [Required] [Display(Name = "Prenom :")]
         public string UserName { get; set; }
         [Required] [Display(Name = "Date de naissance :")]
+        [DataType(DataType.Date)]
         public DateTime Datadenaissance { get; set; }
         [Required]
         [Display(Name = "Numéro de téléphone :")]
-        public string numtele { get; set; }[Required] [Display(Name = "Adresse Client :")]
-        [DataType(DataType.MultilineText)]
+        [DataType(DataType.PhoneNumber)]
+        public int numtele { get; set; }
+        [Required] [Display(Name = "Ville Client :")]
+
+     
         public string adresse { get; set; }
         [Required]  [Display(Name = "Numero de pérmis :")]
         public string Numpermis { get; set; }

@@ -6,7 +6,7 @@ using System.Web;
 
 namespace CRMAUTO.Models
 {
-    public class Crminitializer : CreateDatabaseIfNotExists<Crmcontext>
+    public class Crminitializer : DropCreateDatabaseIfModelChanges<Crmcontext>
     {
        
 
