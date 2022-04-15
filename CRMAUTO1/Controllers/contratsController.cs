@@ -36,6 +36,7 @@ namespace CRMAUTO1.Controllers
         }
         public ActionResult Searchcontrat(string ctt  , string cin)
         {
+
              
                 var searchcontrat = from d in db.contrats
                              where d.idcontrat==ctt  
